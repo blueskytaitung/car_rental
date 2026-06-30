@@ -3,88 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>藍天白雲電動車出租 | 綠能旅遊・輕鬆啟程</title>
-    <!-- 適合 Google 廣告審查的 SEO 標籤 -->
-    <meta name="description" content="藍天白雲電動車出租，提供最新款、高性能的電動車租賃服務。手續簡便、價格透明，不論是商務出差還是小旅行，都是您的最佳綠能首選！立即加入 LINE 官方帳號預約享優惠。">
-    
+    <title>藍天白雲電動車出租 | LINE 聯絡資訊</title>
     <style>
         :root {
-            --primary-color: #0076a3; /* 藍天藍 */
-            --secondary-color: #f4f9fc; /* 白雲背景 */
-            --accent-color: #06C755; /* LINE 綠色 */
-            --text-color: #333333;
+            --primary-blue: #1e88e5; /* 藍天藍 */
+            --bg-color: #f7fbff; /* 淺藍，仿白雲天色 */
+            --text-dark: #333;
+            --accent-green: #06C755; /* LINE 官方綠色 */
         }
         
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: "PingFang TC", "Heiti TC", "Microsoft JhengHei", sans-serif;
         }
 
         body {
-            background-color: var(--secondary-color);
-            color: var(--text-color);
-            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.5;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
         }
 
-        .container {
+        .phone-frame {
             width: 100%;
-            max-width: 500px; /* 針對手機版最佳化 */
-            background: #ffffff;
+            max-width: 480px; /* 針對手機版最佳化 */
+            background: white;
             min-height: 100vh;
-            box-shadow: 0 0 10px rgba(0,0,0,0.05);
             display: flex;
             flex-direction: column;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
         }
 
-        /* 頂部形象區 */
+        /* 頂部 Header */
         .header {
-            background: linear-gradient(135deg, #00a4e4, var(--primary-color));
+            position: relative;
+            background-color: var(--primary-blue);
             color: white;
             text-align: center;
             padding: 45px 20px;
+            overflow: hidden;
+        }
+        
+        /* 雲朵背景裝飾 */
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 20px; right: 20px;
+            width: 80px; height: 50px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 50px;
+            box-shadow: -60px 20px 0 rgba(255,255,255,0.1), -110px 10px 0 rgba(255,255,255,0.15);
+        }
+
+        .header-logo {
+            width: 85px; /* 預留給你的專屬設計 Logo */
+            height: auto;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
         }
 
         .header h1 {
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
         }
 
         .header p {
-            font-size: 16px;
+            font-size: 15px;
             opacity: 0.9;
+            position: relative;
+            z-index: 1;
         }
 
-        /* 核心行動呼籲區 (CTA) */
-        .cta-section {
-            padding: 40px 20px;
-            text-align: center;
-            background: #ffffff;
+        /* 店面元素區：精選實景照片與經典紅布條 */
+        .store-elements {
+            background: white;
+            padding: 25px 20px 15px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-bottom: 1px solid #eee;
         }
 
-        .cta-title {
-            font-size: 20px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--primary-color);
+        .store-photo-strip {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
         }
 
-        /* 閃爍亮點標籤 */
-        .badge {
-            display: inline-block;
-            background-color: #ff4d4f;
+        .store-photo {
+            width: 100%;
+            height: 95px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        /* 經典紅布條：融合店內最吸睛的超值服務 */
+        .banner-strip {
+            width: 100%;
+            background-color: #ff4747; 
             color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: bold;
-            margin-bottom: 25px;
+            padding: 12px 15px;
+            border-radius: 6px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            letter-spacing: 0.5px;
+        }
+
+        /* 核心 LINE 行動區 (CTA) */
+        .cta-section {
+            padding: 35px 20px;
+            text-align: center;
+            background: #fafafa;
+        }
+
+        .cta-tagline {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+            font-weight: 500;
         }
 
         /* 醒目的 LINE 按鈕 */
@@ -92,95 +142,139 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: var(--accent-color);
+            background-color: var(--accent-green);
             color: white;
             text-decoration: none;
-            padding: 16px 20px;
+            padding: 16px 30px;
             border-radius: 50px;
             font-size: 18px;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(6, 199, 85, 0.3);
-            transition: transform 0.2s;
+            box-shadow: 0 6px 15px rgba(6, 199, 85, 0.35);
+            transition: all 0.2s ease;
         }
 
         .line-btn:active {
-            transform: scale(0.98);
+            transform: translateY(2px);
+            box-shadow: 0 2px 5px rgba(6, 199, 85, 0.2);
         }
 
-        .line-btn svg {
-            width: 24px;
-            height: 24px;
+        .line-btn-icon {
+            width: 26px;
+            height: 26px;
             margin-right: 10px;
             fill: white;
         }
 
-        /* 資訊介紹區 */
+        /* 說明資訊區 */
         .info-section {
-            padding: 30px 20px;
-            background: #fafafa;
             flex-grow: 1;
-            text-align: center;
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
         .info-card {
             background: white;
             padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-            margin-bottom: 15px;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02);
         }
 
         .info-card h3 {
-            font-size: 18px;
-            color: var(--primary-color);
+            font-size: 17px;
+            color: var(--primary-blue);
             margin-bottom: 8px;
+            font-weight: 600;
         }
 
         .info-card p {
             font-size: 14px;
             color: #666;
         }
+
+        /* 底部 */
+        .footer {
+            background-color: white;
+            border-top: 1px solid #eee;
+            padding: 25px;
+            text-align: center;
+            font-size: 13px;
+            color: #999;
+        }
+        
+        .footer-logo {
+            width: 45px;
+            height: auto;
+            margin-bottom: 10px;
+            opacity: 0.5;
+        }
+
+        .fb-link {
+            color: var(--primary-blue);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 6px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- 頂部招牌 -->
+    <div class="phone-frame">
+        <!-- 頂部招牌與 LOGO 區 -->
         <header class="header">
+            <!-- 專屬設計 Logo 檔案 -->
+            <img src="logo.png" alt="藍天白雲 LOGO" class="header-logo">
             <h1>藍天白雲電動車出租</h1>
-            <p>節能環保・低碳旅遊・輕鬆出發</p>
+            <p>節能環保・低碳旅遊・輕鬆啟程</p>
         </header>
 
-        <!-- LINE 核心預約區 -->
-        <section class="cta-section">
-            <span class="badge">🔥 填單預約再享限時租車優惠</span>
-            <p class="cta-title">專業客服線上 1 對 1 諮詢</p>
+        <!-- 在地店面元素區 -->
+        <section class="store-elements">
+            <!-- 照片牆：對應您剛剛轉換完成的實景 JPG 照片 -->
+            <div class="store-photo-strip">
+                <div class="store-photo" style="background-image: url('IMG_3948.jpg');"></div> 
+                <div class="store-photo" style="background-image: url('IMG_3947.jpg');"></div> 
+                <div class="store-photo" style="background-image: url('IMG_3942.jpg');"></div> 
+            </div>
             
-            <!-- 已成功綁定您的官方 LINE -->
+            <!-- 店面紅布條核心亮點 -->
+            <div class="banner-strip">
+                參觀花海免門票 ‧ 租電動車免停車費
+            </div>
+        </section>
+
+        <!-- 核心 LINE 行動區 (CTA) -->
+        <section class="cta-section">
+            <p class="cta-tagline">專業客服線上 1 對 1 諮詢，立即預約保留車款</p>
+            
             <a href="https://lin.ee/nxhpkp2" class="line-btn" target="_blank">
-                <svg viewBox="0 0 24 24">
+                <svg class="line-btn-icon" viewBox="0 0 24 24">
                     <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.121.303.079.778.039 1.085l-.171 1.025c-.053.303-.254 1.186 1.093.647 1.348-.539 7.274-4.283 9.922-7.33 1.932-2.126 2.024-4.249 2.024-5.367zm-15.632 2.52h-1.52v-3.722h1.52v3.722zm3.038 0h-1.464l-1.637-2.316v2.316h-1.46v-3.722h1.464l1.637 2.316v-2.316h1.46v3.722zm1.752-1.396h1.614v1.396h-3.134v-3.722h3.134v1.396h-1.614v.364h1.614v1.002h-1.614v.564zm4.212 1.396h-3.134v-3.722h1.52v2.326h1.614v1.396z"/>
                 </svg>
-                點我加 LINE 立即預約諮詢
+                點我加 LINE 立即預約
             </a>
         </section>
 
-        <!-- 說明點 -->
+        <!-- 說明資訊區 -->
         <section class="info-section">
             <div class="info-card">
-                <h3>⚡ 綠能低碳新體驗</h3>
-                <p>提供保養極佳、電力滿載的電動車，讓您的旅程平順、安靜又環保。</p>
+                <h3>⚡ 多款彩色車型・車況極佳</h3>
+                <p>提供多款全新遮陽電動車與多色造型機車，出發前電力滿載，平順、安全又好騎。</p>
             </div>
             <div class="info-card">
-                <h3>💼 手續簡便快速交車</h3>
-                <p>線上預約、到店核對身分即刻出發，不浪費您寶貴的旅遊時間。</p>
+                <h3>💼 預約留車・到店即刻出發</h3>
+                <p>線上預約享好康，現場交車快速免排隊，不浪費您在伯朗大道的任何一秒美景。</p>
             </div>
         </section>
 
         <!-- 底部聲明與 FB 連結 -->
-        <footer style="text-align: center; padding: 25px 20px; font-size: 13px; color: #999; background: #ffffff; border-top: 1px solid #eee;">
+        <footer class="footer">
+            <img src="logo.png" alt="藍天白雲 LOGO" class="footer-logo">
             <p>© 2026 藍天白雲電動車出租 版權所有</p>
-            <p style="margin-top: 8px;">更多最新消息歡迎關注我們的 <a href="https://www.facebook.com/p/%E8%97%8D%E5%A4%A9%E7%99%BD%E9%9B%B2%E9%9B%BB%E5%8B%95%E8%BB%8A%E5%87%BA%E7%A7%9F-61581143634270/" target="_blank" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">Facebook 粉絲專頁</a></p>
+            <a href="https://www.facebook.com/p/%E8%97%8D%E5%A4%A9%E7%99%BD%E9%9B%B2%E9%9B%BB%E5%8B%95%E8%BB%8A%E5%87%BA%E7%A7%9F-61581143634270/" target="_blank" class="fb-link">追蹤我們的 Facebook 粉絲專頁</a>
         </footer>
     </div>
 
