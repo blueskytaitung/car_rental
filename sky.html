@@ -164,7 +164,24 @@ function gtag_report_conversion(url) {
             font-weight: 500;
         }
 
-        /* 醒目的 LINE 按鈕 */
+        /* ==========================================
+           生動微動畫：讓 LINE 按鈕動起來的關鍵樣式
+           ========================================== */
+        @keyframes buttonPulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 6px 15px rgba(6, 199, 85, 0.4);
+            }
+            50% {
+                transform: scale(1.04); /* 輕微柔和放大 4% */
+                box-shadow: 0 10px 25px rgba(6, 199, 85, 0.6); /* 陰影加深，產生呼吸發光感 */
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 6px 15px rgba(6, 199, 85, 0.4);
+            }
+        }
+
         .line-btn {
             display: flex;
             align-items: center;
@@ -172,22 +189,30 @@ function gtag_report_conversion(url) {
             background-color: var(--accent-green);
             color: white;
             text-decoration: none;
-            padding: 16px 30px;
+            padding: 18px 30px; /* 加高按鈕，手機大拇指更好按 */
             border-radius: 50px;
-            font-size: 18px;
+            font-size: 19px; /* 字體放大，更具吸引力 */
             font-weight: bold;
-            box-shadow: 0 6px 15px rgba(6, 199, 85, 0.35);
             transition: all 0.2s ease;
+            
+            /* 每 2 秒自動規律呼吸跳動，無限循環 */
+            animation: buttonPulse 2s infinite ease-in-out; 
+        }
+
+        .line-btn:hover {
+            background-color: #05b34c; /* 滑鼠移上去顏色微深 */
+            animation-play-state: paused; /* 滑上去時暫停跳動，方便點擊 */
+            transform: scale(1.02);
         }
 
         .line-btn:active {
-            transform: translateY(2px);
-            box-shadow: 0 2px 5px rgba(6, 199, 85, 0.2);
+            transform: scale(0.98) translateY(2px); /* 點擊瞬間微縮並下沉，模擬實體按鍵壓感 */
+            box-shadow: 0 3px 8px rgba(6, 199, 85, 0.3);
         }
 
         .line-btn-icon {
-            width: 26px;
-            height: 26px;
+            width: 28px;
+            height: 28px;
             margin-right: 10px;
             fill: white;
         }
@@ -277,7 +302,7 @@ function gtag_report_conversion(url) {
         <section class="cta-section">
             <p class="cta-tagline">專業客服線上 1 對 1 諮詢，立即預約保留車款</p>
             
-            <a href="https://lin.ee/nxhpkp2" class="line-btn" target="_blank">
+            <a href="https://lin.ee/nxhpkp2" class="line-btn" target="_blank" onclick="return gtag_report_conversion('https://lin.ee/nxhpkp2');">
                 <svg class="line-btn-icon" viewBox="0 0 24 24">
                     <path d="M24 10.304c0-5.369-5.383-9.738-12-9.738-6.616 0-12 4.369-12 9.738 0 4.814 4.269 8.846 10.036 9.608.391.084.922.258 1.057.592.121.303.079.778.039 1.085l-.171 1.025c-.053.303-.254 1.186 1.093.647 1.348-.539 7.274-4.283 9.922-7.33 1.932-2.126 2.024-4.249 2.024-5.367zm-15.632 2.52h-1.52v-3.722h1.52v3.722zm3.038 0h-1.464l-1.637-2.316v2.316h-1.46v-3.722h1.464l1.637 2.316v-2.316h1.46v3.722zm1.752-1.396h1.614v1.396h-3.134v-3.722h3.134v1.396h-1.614v.364h1.614v1.002h-1.614v.564zm4.212 1.396h-3.134v-3.722h1.52v2.326h1.614v1.396z"/>
                 </svg>
